@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C397CD524EBE75300179184 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C397CD424EBE75300179184 /* ChartView.swift */; };
 		7C647B5C24EFA56700A94BFF /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C647B5B24EFA56700A94BFF /* Scenario.swift */; };
+		7C647B7F24F413C900A94BFF /* TTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C647B7E24F413C900A94BFF /* TTSEngine.swift */; };
 		7C6A9A3024DA7FE800AB0862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A9A2F24DA7FE800AB0862 /* AppDelegate.swift */; };
 		7C6A9A3224DA7FE800AB0862 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A9A3124DA7FE800AB0862 /* SceneDelegate.swift */; };
 		7C6A9A3624DA7FEB00AB0862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C6A9A3524DA7FEB00AB0862 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		7C397CD424EBE75300179184 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		7C647B5B24EFA56700A94BFF /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		7C647B7E24F413C900A94BFF /* TTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSEngine.swift; sourceTree = "<group>"; };
 		7C6A9A2C24DA7FE800AB0862 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6A9A2F24DA7FE800AB0862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C6A9A3124DA7FE800AB0862 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		7C6A9A2E24DA7FE800AB0862 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				7C647B7E24F413C900A94BFF /* TTSEngine.swift */,
 				7C6A9A2F24DA7FE800AB0862 /* AppDelegate.swift */,
 				7C6A9A3124DA7FE800AB0862 /* SceneDelegate.swift */,
 				7C397CD424EBE75300179184 /* ChartView.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				7CC86D8B24DB1E300091A729 /* UIColor+Ext.swift in Sources */,
 				7C6A9A3024DA7FE800AB0862 /* AppDelegate.swift in Sources */,
+				7C647B7F24F413C900A94BFF /* TTSEngine.swift in Sources */,
 				7C6A9A3224DA7FE800AB0862 /* SceneDelegate.swift in Sources */,
 				7C647B5C24EFA56700A94BFF /* Scenario.swift in Sources */,
 				7C397CD524EBE75300179184 /* ChartView.swift in Sources */,

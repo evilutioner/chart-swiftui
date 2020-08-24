@@ -8,52 +8,12 @@
 
 import SwiftUI
 
-import AVFoundation
-
-struct AnimatableModifierDouble: AnimatableModifier {
-
-    var targetValue: Double
-
-    var animatableData: Double {
-        didSet {
-            checkIfFinished()
-        }
-    }
-
-    private let completion: () -> ()
-
-    init(bindedValue: Double, completion: @escaping () -> ()) {
-        self.completion = completion
-
-        self.animatableData = bindedValue
-        targetValue = bindedValue
-    }
-
-    func checkIfFinished() -> () {
-        if animatableData == targetValue {
-            DispatchQueue.main.async {
-                self.completion()
-            }
-        }
-    }
-
-    func body(content: Content) -> some View {
-        content.animation(nil)
-    }
-}
-
 struct ChartView: View {
     @State var inputLines: [ChatLine]
     @State var lines = [ChatLine]()
     @State var animateLine: ChatLine?
     @State var lastBubbleOpacity: Double = 0
     let ttsEngine = TTSEngine()
-    
-    private func applyChartFrame<V: View>(view: V, metrics: GeometryProxy) -> some View {
-        return view
-            .frame(maxWidth: metrics.size.width * 0.75, alignment: .bottomLeading)
-            .padding(EdgeInsets(top: 0, leading: 15, bottom: 30, trailing: 0))
-    }
     
     var body: some View {
         GeometryReader { metrics in
@@ -67,8 +27,7 @@ struct ChartView: View {
                 }
                 
             }.frame(alignment: .bottomLeading)
-        }.background(Color(hex: "FDFDFE"))
-            .onAppear {
+        }.onAppear {
                 self.proccessNextLine()
         }
     }
@@ -90,30 +49,5 @@ struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
         ChartView(inputLines: [.init(text: "Ut enim ad minim veniam"),
         .init(text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])
-    }
-}
-
-
-final class TTSEngine: NSObject {
-    private let speechSynthesizer = AVSpeechSynthesizer()
-    private let voice = AVSpeechSynthesisVoice(language: "English")
-    private var completion: (() -> Void)?
-    
-    override init() {
-        super.init()
-        self.speechSynthesizer.delegate = self
-    }
-    
-    func speak(text: String, completion: (() -> Void)?) {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voice
-        self.completion = completion
-        speechSynthesizer.speak(utterance)
-    }
-}
-extension TTSEngine: AVSpeechSynthesizerDelegate {
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        completion?()
-        completion = nil
     }
 }
