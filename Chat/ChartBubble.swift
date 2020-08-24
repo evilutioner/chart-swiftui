@@ -50,6 +50,6 @@ struct ChartBubble: View {
 
 struct ChartBubble_Previews: PreviewProvider {
     static var previews: some View {
-        ChartBubble(chatMessage: .init(text: "dlks jkdj glkfj lkgjfgk jdfkgkjfg;kj;kgj;kjkgjf kfgj kfjkgjfkg"))
+        ChartBubble(chatMessage: .init(text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."))
     }
 }

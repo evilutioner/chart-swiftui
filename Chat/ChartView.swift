@@ -66,10 +66,6 @@ struct ChartView: View {
                         .transition(AnyTransition.opacity.combined(with: .slide))
                 }
                 
-//                withAnimation(Animation.easeOut(duration: 1).delay(1)) {
-//                    self.proccessNextLine()
-//                }
-                
             }.frame(alignment: .bottomLeading)
         }.background(Color(hex: "FDFDFE"))
             .onAppear {
@@ -92,8 +88,8 @@ struct ChartView: View {
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView(inputLines: [.init(text: "kdflkfldk dfkjfkdj  flkjd jf kdjfk f jj fkjdfkjdkj fkjdkfj kdjf k"),
-        .init(text: "dkslkdlskj")])
+        ChartView(inputLines: [.init(text: "Ut enim ad minim veniam"),
+        .init(text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])
     }
 }
 
